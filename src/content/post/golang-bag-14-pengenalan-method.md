@@ -7,7 +7,7 @@ publishDate: "17 Jun 2020"
 
 Merupakan fungsi yang berada pada `type`, atau biasanya terdapat pada `struct`.
 
-Kita sudah sama-sama belajar _struct_ pada artikel [sebelumnya](https://abdulghofur.me/blog/golang-bag-13-pengenalan-struct).
+Kita sudah sama-sama belajar _struct_ pada artikel [sebelumnya](/blog/golang-bag-13-pengenalan-struct).
 
 Nah, method adalah fungsi blueprint yang ada di dalamnya.
 Method ini bersifat independent dengan objek yang dibuat, yang mana ini menjadi keuntungan bagi kita.

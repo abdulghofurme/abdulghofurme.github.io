@@ -11,7 +11,7 @@ Sederhananya, **Struct** adalah **Class** pada bahasa pemrograman lain.
 
 Struct adalah sebuah blueprint objek.
 
-Kita sudah membahas [_Map_](https://abdulghofur.me/blog/golang-bag-9-map) sebelumnya.
+Kita sudah membahas [_Map_](/blog/golang-bag-9-map) sebelumnya.
 Nah hasil akhir dari sebuah _Struct_ sama dengan hasil akhir Map.
 Perbedaannya,
 

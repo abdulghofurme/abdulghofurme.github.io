@@ -8,7 +8,7 @@ publishDate: "12 Jun 2020"
 ## Pointer
 
 Pointer adalah alamat memori / refernce. OK, selesai, sesederhana itu.
-Bagi temen temen yang belum tahu apa itu reference / alamat memori, bisa baca di artikel yang kita bahas tentang [slice](https://abdulghofur.me/blog/golang-bag-7-pengenalan-slice).
+Bagi temen temen yang belum tahu apa itu reference / alamat memori, bisa baca di artikel yang kita bahas tentang [slice](/blog/golang-bag-7-pengenalan-slice).
 
 Ciri utama dari sebuah pointer adalah tanda _asterisk_ (\*) sebelum tipe data
 
