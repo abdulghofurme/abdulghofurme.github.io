@@ -11,7 +11,7 @@ import { remarkReadingTime } from "./src/utils/remark-reading-time.mjs";
 // https://astro.build/config
 export default defineConfig({
 	// ! Please remember to replace the following site property with your own domain
-	site: "https://abdulghofur.me/",
+	site: "https://abdulghofur.github.io/",
 	markdown: {
 		remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
 		remarkRehype: { footnoteLabelProperties: { className: [""] } },
