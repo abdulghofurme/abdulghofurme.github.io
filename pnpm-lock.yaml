@@ -1,4 +1,4 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
 
 settings:
   autoInstallPeers: true
@@ -98,8 +98,8 @@ devDependencies:
     specifier: ^8.4.30
     version: 8.4.30
   postcss-html:
-    specifier: ^1.5.0
-    version: 1.5.0
+    specifier: ^1.7.0
+    version: 1.7.0
   postcss-import:
     specifier: ^15.1.0
     version: 15.1.0(postcss@8.4.30)
@@ -4033,8 +4033,8 @@ packages:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
     dev: false
 
-  /js-tokens@8.0.1:
-    resolution: {integrity: sha512-3AGrZT6tuMm1ZWWn9mLXh7XMfi2YtiLNPALCVxBCiUVq0LD1OQMxV/AdS/s7rLJU5o9i/jBZw/N4vXXL5dm29A==}
+  /js-tokens@9.0.0:
+    resolution: {integrity: sha512-WriZw1luRMlmV3LGJaR6QOJjWwgLUTf89OwT2lUOyjX2dJGBwgmIkbcz+7WFZjrZM635JOIR517++e/67CP9dQ==}
     dev: true
 
   /js-yaml@3.14.1:
@@ -5208,12 +5208,12 @@ packages:
       find-up: 4.1.0
     dev: false
 
-  /postcss-html@1.5.0:
-    resolution: {integrity: sha512-kCMRWJRHKicpA166kc2lAVUGxDZL324bkj/pVOb6RhjB0Z5Krl7mN0AsVkBhVIRZZirY0lyQXG38HCVaoKVNoA==}
+  /postcss-html@1.7.0:
+    resolution: {integrity: sha512-MfcMpSUIaR/nNgeVS8AyvyDugXlADjN9AcV7e5rDfrF1wduIAGSkL4q2+wgrZgA3sHVAHLDO9FuauHhZYW2nBw==}
     engines: {node: ^12 || >=14}
     dependencies:
       htmlparser2: 8.0.1
-      js-tokens: 8.0.1
+      js-tokens: 9.0.0
       postcss: 8.4.30
       postcss-safe-parser: 6.0.0(postcss@8.4.30)
     dev: true
