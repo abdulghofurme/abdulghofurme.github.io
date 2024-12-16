@@ -43,7 +43,7 @@ tapi tentu semakin banyak banyak fungsi validasi yang dibutuhkan semakin banyak 
 
 ## Detail prosedur
 
-Berikut detail prosedur(mungkin bersifat*subjective*) untuk bisa dibandingkan.
+Berikut detail prosedur(mungkin bersifat _subjective_) untuk bisa dibandingkan.
 
 ### `class-validator` & `class-transformer`
 
