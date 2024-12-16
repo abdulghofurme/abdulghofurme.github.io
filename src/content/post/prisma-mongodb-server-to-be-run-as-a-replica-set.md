@@ -1,7 +1,7 @@
 ---
 title: "Prisma & MongoDB: server to be run as a replica set"
 description: 'Solution for: "Prisma needs to perform transactions, which requires your MongoDB server to be run as a replica set"'
-tags: ["prisma", "mongodb"]
+tags: ["prisma", "mongodb", "javascript", "db", "be"]
 publishDate: "16 Dec 2024"
 ogImage: ""
 ---
