@@ -16,17 +16,17 @@ Langsung aja lah.
 ### 1. Alasan pilih `class-validator` & `class-transformer`
 
 <ol type="a">
- <li>Merupakan _duo_ packages yang umum & digunakan secara luas di NestJS</li>
- <li>Metode penulisannya _NestJS banget_ karena merupakan _decorator-based validation</li>
- <li>clean & seamless integration dengan penggunaannya bersama `class-transformer` & `ValidationPipe`</li>
+ <li>Merupakan <i>duo</i> packages yang umum & digunakan secara luas di NestJS</li>
+ <li>Metode penulisannya <i>NestJS banget</i> karena merupakan <i>decorator-based validation</i></li>
+ <li>clean & seamless integration dengan penggunaannya bersama <code>class-transformer</code> & <code>ValidationPipe</code></li>
 </ol>
 
 ### 2. Alasan pilih `zod`
 
 <ol type="a">
  <li>Framework agnostic</li>
- <li>_Typescript banget_</li>
- <li>Buat yang lebih prefer _functional_ & _schema-based_ approach</li>
+ <li><i>Typescript banget</i></li>
+ <li>Buat yang lebih prefer <i>functional</i> & <i>schema-based</i> approach</li>
  <li>Performance & lightweight validation adalah hal yang critical</li>
 </ol>
 
