@@ -3,6 +3,7 @@ title: "Golang bagian-3 Konstanta"
 description: "Golang constant - membuat variable konstanta pada bahasa go"
 tags: ["golang", "belajarapa"]
 publishDate: "29 May 2020"
+ogImage: ""
 ---
 
 ## Konstanta

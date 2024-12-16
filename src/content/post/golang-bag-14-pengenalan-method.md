@@ -3,6 +3,7 @@ title: "Golang bagian-14 Pengenalan Method"
 description: "Golang method - implementasi class function pada bahasa go"
 tags: ["golang", "belajarapa"]
 publishDate: "17 Jun 2020"
+ogImage: ""
 ---
 
 Merupakan fungsi yang berada pada `type`, atau biasanya terdapat pada `struct`.

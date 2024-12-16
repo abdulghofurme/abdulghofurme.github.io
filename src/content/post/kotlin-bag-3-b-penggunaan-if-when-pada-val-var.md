@@ -3,6 +3,7 @@ title: "Kotlin bagian 3B: Penggunaan If & When pada Val & Var"
 description: "Kotlin - val? var? dan mengatur alur kerja program pada bahasa kotlin"
 tags: ["kotlin", "belajarapa"]
 publishDate: "19 Sep 2019"
+ogImage: ""
 ---
 
 Article ini dibuat untuk melengkapi article sebelumnya _#kelupaannambahin_.

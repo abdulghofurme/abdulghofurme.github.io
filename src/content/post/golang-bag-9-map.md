@@ -3,6 +3,7 @@ title: "Golang bagian-9 Map"
 description: "Golang map - penerapan object dengan batasan data type pada bahasa go"
 tags: ["golang", "belajarapa"]
 publishDate: "08 Jun 2020"
+ogImage: ""
 ---
 
 ## Map

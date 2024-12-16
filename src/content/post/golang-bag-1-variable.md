@@ -3,6 +3,7 @@ title: "Golang bagian-1 Variable"
 description: "Golang variable - mengenal cara deklarasi variable pada bahasa go"
 tags: ["golang", "belajarapa"]
 publishDate: "28 May 2020"
+ogImage: ""
 ---
 
 ## Variabel

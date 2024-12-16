@@ -3,6 +3,7 @@ title: "JavaScript: Don't use replaceAll"
 description: "[English] Javascript - watch out... stop using replaceAll"
 tags: ["javascript", "sharingapa"]
 publishDate: "25 Jan 2022"
+ogImage: ""
 ---
 
 Instead of using `replaceAll`, it is better to use `replace`.
