@@ -3,6 +3,7 @@ title: "Golang bagian-5 Control-Flow - Perulangan"
 description: "Golang iteration - mudahnya menggunakan perulangan pada golang"
 tags: ["golang", "belajarapa"]
 publishDate: "29 May 2020"
+ogImage: ""
 ---
 
 ## `for`

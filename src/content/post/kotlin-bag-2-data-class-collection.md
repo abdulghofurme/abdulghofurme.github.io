@@ -3,6 +3,7 @@ title: "Kotlin bagian-2 Data Types: Data Class & Collecton"
 description: "Kotlin - mengenal class dan cara penggunaannya pada bahasa kotlin"
 tags: ["kotlin", "belajarapa"]
 publishDate: "15 Sep 2019"
+ogImage: ""
 ---
 
 Pada sesi sebelumnya kita telah membahas [**Kenapa memilih Kotlin, Penulisan Variable, sedikit Data Types seperti Teks, Number, Boolean & Array, dan Bermain dengan Null**](/blog/hello-kotlin). Pada sesi ini masih seputar Data Types, Data Class, Collection dan Function.

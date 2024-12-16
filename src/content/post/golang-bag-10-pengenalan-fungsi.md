@@ -3,6 +3,7 @@ title: "Golang bagian-10 Pengenalan Fungsi"
 description: "Golang function - mengelompokkan dan mengorganisir baris kode ke dalam fungsi"
 tags: ["golang", "belajarapa"]
 publishDate: "09 Jun 2020"
+ogImage: ""
 ---
 
 ## Fungsi
