@@ -8,10 +8,12 @@ import { getAllPosts, getUniqueTags, sortMDByDate } from "@/utils";
 
 export const getStaticPaths = (async ({ paginate }) => {
 	const allPosts = await getAllPosts();
+
 	const allPostsByDate = sortMDByDate(allPosts);
 	const uniqueTags = getUniqueTags(allPosts);
 	return paginate(allPostsByDate, { props: { uniqueTags }, pageSize: 10 });
 }) satisfies GetStaticPaths;
+
 
 interface Props {
 	page: Page<CollectionEntry<"post">>;
@@ -42,7 +44,11 @@ const paginationProps = {
 ---
 
 <PageLayout meta={meta}>
-	<h1 class="title mb-6">Posts</h1>
+	<div class="flex items-center mb-6 justify-between">
+
+	<h1 class="title">Posts</h1>
+	<span class="text-sm"> ({page.start + 1}-{page.end + 1} of {page.total})</span>
+	</div>
 	<div class="grid gap-y-16 sm:grid-cols-[3fr_1fr] sm:gap-x-8">
 		<section aria-label="Blog post list">
 			<ul class="space-y-8 text-start">
