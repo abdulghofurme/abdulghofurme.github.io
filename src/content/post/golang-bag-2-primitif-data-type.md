@@ -3,6 +3,7 @@ title: "Golang bagian-2 Primitif Data Type"
 description: "Golang data type - mengenal string, boolean dan numerik pada bahasa go"
 tags: ["golang", "belajarapa"]
 publishDate: "28 May 2020"
+ogImage: ""
 ---
 
 ## Tipe Data Primitif

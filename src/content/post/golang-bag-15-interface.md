@@ -3,6 +3,7 @@ title: "Golang bagian-15 Interface"
 description: "Golang interface - mengenal interface pada bahasa go & keunikannya"
 tags: ["golang", "belajarapa"]
 publishDate: "20 Jun 2020"
+ogImage: ""
 ---
 
 Dimana struct merupakan cetak biru sebuah objek yang nantinya bisa kita gunakan untuk beberapa kali.

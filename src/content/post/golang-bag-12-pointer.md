@@ -3,6 +3,7 @@ title: "Golang bagian-12 Pointer"
 description: "Golang pointer - alamat memory dan bagaimana golang menyimpan data"
 tags: ["golang", "belajarapa"]
 publishDate: "12 Jun 2020"
+ogImage: ""
 ---
 
 ## Pointer

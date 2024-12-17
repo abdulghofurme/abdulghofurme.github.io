@@ -3,6 +3,7 @@ title: "Golang bagian-6 Array"
 description: "Golang array - mengenal array dan implementasnya pada bahasa go"
 tags: ["golang", "belajarapa"]
 publishDate: "04 Jun 2020"
+ogImage: ""
 ---
 
 ## Array

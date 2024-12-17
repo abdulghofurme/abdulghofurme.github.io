@@ -3,6 +3,7 @@ title: "Pengenalan: Impact PWA pada bisnis, perlukah?"
 description: "Progressive Web Apps: dalam pandangan bisnis, perlu ngga sih???"
 tags: ["web", "diskusi", "javascript"]
 publishDate: "16 Dec 2020"
+ogImage: ""
 ---
 
 Setiap dihadapkan pada sesuatu yang baru,
