@@ -6,6 +6,7 @@ import { getAllPosts, sortMDByDate } from "@/utils";
 
 const MAX_POSTS = 10;
 const allPosts = await getAllPosts();
+const totalPosts = allPosts.length;
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 ---
 
@@ -19,7 +20,10 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 		<SocialList />
 	</section>
 	<section aria-label="Blog post list" class="mt-16">
-		<h2 class="title mb-4 text-xl">Posts</h2>
+		<div class="flex items-center justify-between mb-4 gap-2">
+			<h2 class="title text-xl"><a href="/posts/">Posts</a></h2>
+			<a class="text-sm" href="/posts/">Lihat semua ({totalPosts}) →</a>
+		</div>
 		<ul class="space-y-4 sm:space-y-2">
 			{
 				allPostsByDate.map((p) => (
