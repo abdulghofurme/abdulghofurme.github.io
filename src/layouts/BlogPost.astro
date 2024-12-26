@@ -6,7 +6,7 @@ import BlogHero from "@/components/blog/Hero";
 import TOC from "@/components/blog/TOC";
 
 interface Props {
-	post: CollectionEntry<"post">;
+	post: CollectionEntry<"post" | "portfolio">;
 	comment?: boolean;
 }
 
@@ -18,6 +18,8 @@ const {
 const socialImage = ogImage ?? `/og-image/${slug}.png`;
 const date = updatedDate ?? publishDate;
 const articleDate = date.getTime() ? date.toISOString() : new Date().toISOString();
+// console.log(date);
+// const articleDate = "";
 const { headings } = await post.render();
 ---
 
