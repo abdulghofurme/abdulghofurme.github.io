@@ -1,7 +1,8 @@
 ---
 import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
 import PostLayout from "@/layouts/BlogPost";
-import { getAllPosts } from "@/utils";
+import FormattedDate from "../../components/FormattedDate.astro";
+import { getAllPosts, type Comment, type DevToComment, parseCommentDevTo } from "@/utils";
 
 export const getStaticPaths = (async () => {
 	const blogEntries = await getAllPosts();
@@ -14,9 +15,49 @@ export const getStaticPaths = (async () => {
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { entry } = Astro.props;
+const comments: Comment[] = [];
+if (entry.data.devToArticleId) {
+	const devToCommentsResponse = await fetch(
+		`https://dev.to/api/comments?a_id=${entry.data.devToArticleId}`
+	);
+	const devToCommentsJson: DevToComment[] = await devToCommentsResponse.json();
+	devToCommentsJson.forEach((element) => {
+		comments.push(parseCommentDevTo(element));
+	});
+}
 const { Content } = await entry.render();
 ---
 
-<PostLayout post={entry}>
+<PostLayout post={entry} comment={comments.length > 0}>
 	<Content />
+	{
+		comments.length > 0 && (
+			<section>
+				<h2>Comments</h2>
+				<div class="space-y-6">
+					{comments.map((comment) => (
+						<div class="flex items-start justify-start gap-3">
+							<img
+								src={comment.user.avatar}
+								alt={comment.user.name}
+								width="40px"
+								height="40px"
+								loading="lazy"
+								class="!m-0 h-10 w-10 shrink-0 rounded-full"
+							/>
+							<div class="w-full space-y-2 rounded-md border border-accent-2 p-3">
+								<div class="flex items-center justify-start gap-2 text-accent-2">
+									<span>{comment.user.name}</span>
+									•
+									<FormattedDate date={new Date(comment.created_at)} />
+									{comment.source && <span>at {comment.source}</span>}
+								</div>
+								<div set:html={comment.html} class="m-0 [&>p]:!mb-0 [&>p]:!mt-1" />
+							</div>
+						</div>
+					))}
+				</div>
+			</section>
+		)
+	}
 </PostLayout>
