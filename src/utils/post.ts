@@ -8,30 +8,30 @@ export async function getAllPosts() {
 	});
 }
 
-export function sortMDByDate(posts: Array<CollectionEntry<"post">>) {
-	return posts.sort((a, b) => {
+export function sortMDByDate(all: Array<CollectionEntry<"post" | "portfolio">>) {
+	return all.sort((a, b) => {
 		const aDate = new Date(a.data.updatedDate ?? a.data.publishDate).valueOf();
 		const bDate = new Date(b.data.updatedDate ?? b.data.publishDate).valueOf();
 		return bDate - aDate;
 	});
 }
 
-/** Note: This function doesn't filter draft posts, pass it the result of getAllPosts above to do so. */
-export function getAllTags(posts: Array<CollectionEntry<"post">>) {
-	return posts.flatMap((post) => [...post.data.tags]);
+/** Note: This function doesn't filter draft posts & portfolios, pass it the result of getAllPosts, getAllPortfolios above to do so. */
+export function getAllTags(all: Array<CollectionEntry<"post" | "portfolio">>) {
+	return all.flatMap((each) => [...each.data.tags]);
 }
 
-/** Note: This function doesn't filter draft posts, pass it the result of getAllPosts above to do so. */
-export function getUniqueTags(posts: Array<CollectionEntry<"post">>) {
-	return [...new Set(getAllTags(posts))];
+/** Note: This function doesn't filter draft posts & portfolios, pass it the result of getAllPosts, getAllPortfolios above to do so. */
+export function getUniqueTags(all: Array<CollectionEntry<"post" | "portfolio">>) {
+	return [...new Set(getAllTags(all))];
 }
 
-/** Note: This function doesn't filter draft posts, pass it the result of getAllPosts above to do so. */
+/** Note: This function doesn't filter draft posts & portfolios, pass it the result of getAllPosts, getAllPortfolios above to do so. */
 export function getUniqueTagsWithCount(
-	posts: Array<CollectionEntry<"post">>,
+	all: Array<CollectionEntry<"post" | "portfolio">>,
 ): Array<[string, number]> {
 	return [
-		...getAllTags(posts).reduce(
+		...getAllTags(all).reduce(
 			(acc, t) => acc.set(t, (acc.get(t) || 0) + 1),
 			new Map<string, number>(),
 		),

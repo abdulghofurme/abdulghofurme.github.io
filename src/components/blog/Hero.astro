@@ -1,11 +1,10 @@
 ---
-import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import FormattedDate from "../FormattedDate.astro";
-import { date } from "astro/zod";
+// import { date } from "astro/zod";
 
 interface Props {
-	content: CollectionEntry<"post">;
+	content: CollectionEntry<"post" | "portfolio">;
 }
 
 const {
@@ -19,19 +18,6 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 };
 ---
 
-{
-	data.coverImage && (
-		<div class="aspect-h-9 aspect-w-16 mb-6">
-			<Image
-				src={data.coverImage.src}
-				alt={data.coverImage.alt}
-				class="object-cover"
-				loading="eager"
-				fetchpriority="high"
-			/>
-		</div>
-	)
-}
 <h1 class="title mb-3 sm:mb-1" transition:name={data.title}>{data.title}</h1>
 <div class="flex flex-wrap items-center gap-x-3 gap-y-2">
 	<p class="font-semibold">
@@ -72,7 +58,7 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 					<a
 						class="cactus-link inline-block before:content-['#']"
 						aria-label={`View more blogs with the tag ${tag}`}
-						href={`/tags/${tag}/`}
+						href={`/posts/tags/${tag}/`}
 						data-pagefind-filter="tag"
 					>
 						{tag}
@@ -80,6 +66,20 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 					{i < data.tags.length - 1 && ", "}
 				</>
 			))}
+		</div>
+	)
+}
+
+{
+	data.coverImage && (
+		<div class="aspect-h-9 aspect-w-16 my-6">
+			<img
+				src={data.coverImage.src}
+				alt={data.coverImage.alt}
+				class="object-cover"
+				loading="eager"
+				fetchpriority="high"
+			/>
 		</div>
 	)
 }
