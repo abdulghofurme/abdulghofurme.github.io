@@ -4,6 +4,7 @@ description: "Perbandingan zod dengan class-validator & class-transformer di Nes
 tags: ["javascript", "validation", "be"]
 publishDate: "17 Dec 2024"
 ogImage: ""
+devToArticleId: "2162101"
 ---
 
 Sempat bingung, atau setidaknya penasaran antara `zod` atau `class-validator` & `class-transformer`
@@ -15,20 +16,16 @@ Langsung aja lah.
 
 ### 1. Alasan pilih `class-validator` & `class-transformer`
 
-<ol type="a">
- <li>Merupakan <i>duo</i> packages yang umum & digunakan secara luas di NestJS</li>
- <li>Metode penulisannya <i>NestJS banget</i> karena merupakan <i>decorator-based validation</i></li>
- <li>clean & seamless integration dengan penggunaannya bersama <code>class-transformer</code> & <code>ValidationPipe</code></li>
-</ol>
+- Merupakan _duo_ packages yang umum & digunakan secara luas di NestJS
+- Metode penulisannya _NestJS banget_ karena merupakan _decorator-based validation_
+- clean & seamless integration dengan penggunaannya bersama `class-transformer` & `ValidationPipe`
 
 ### 2. Alasan pilih `zod`
 
-<ol type="a">
- <li>Framework agnostic</li>
- <li><i>Typescript banget</i></li>
- <li>Buat yang lebih prefer <i>functional</i> & <i>schema-based</i> approach</li>
- <li>Performance & lightweight validation adalah hal yang critical</li>
-</ol>
+- Framework agnostic
+- _Typescript banget_
+- Buat yang lebih prefer _functional_ & _schema-based_ approach
+- Performance & lightweight validation adalah hal yang critical
 
 ## Detail
 
