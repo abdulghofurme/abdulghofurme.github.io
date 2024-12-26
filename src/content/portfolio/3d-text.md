@@ -31,4 +31,4 @@ Cus lah mulai saja sendiri.
 
 ## The Code
 
-Sedang cari waktu & mood buat dokuemtasinya, LOL.
+Sedang cari waktu & mood buat dokumentasinya, LOL.
