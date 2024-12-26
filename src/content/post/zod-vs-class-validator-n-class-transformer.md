@@ -4,6 +4,7 @@ description: "Perbandingan zod dengan class-validator & class-transformer di Nes
 tags: ["javascript", "validation", "be"]
 publishDate: "17 Dec 2024"
 ogImage: ""
+devToArticleId: "2162101"
 ---
 
 Sempat bingung, atau setidaknya penasaran antara `zod` atau `class-validator` & `class-transformer`
