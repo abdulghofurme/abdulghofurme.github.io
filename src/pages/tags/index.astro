@@ -1,19 +1,19 @@
 ---
 import PageLayout from "@/layouts/Base";
-import { getAllPortfolios, getUniqueTagsWithCount } from "@/utils";
+import { getAllPosts, getUniqueTagsWithCount } from "@/utils";
 
-const allPortfolios = await getAllPortfolios();
-const allTags = getUniqueTagsWithCount(allPortfolios);
+const allPosts = await getAllPosts();
+const allTags = getUniqueTagsWithCount(allPosts);
 
 const meta = {
 	title: "All Tags",
-	description: "A list of all the topics I've written about in my posts",
+	description: "A list of all the topics I've written about in my posts & portfolios",
 };
 ---
 
 <PageLayout meta={meta}>
 	<div class="mb-6 flex items-center gap-2">
-		<h1 class="title">Portfolio Tags</h1>
+		<h1 class="title">Tags</h1>
 		<span class="text-sm">({allTags.length})</span>
 	</div>
 	<ul class="space-y-4">
@@ -22,14 +22,14 @@ const meta = {
 				<li class="flex items-center gap-x-2">
 					<a
 						class="cactus-link inline-block"
-						href={`/posts/tags/${tag}/`}
+						href={`/tags/${tag}/`}
 						title={`View posts with the tag: ${tag}`}
 						rel="prefetch"
 					>
 						&#35;{tag}
 					</a>
 					<span class="inline-block">
-						- {val} Post{val > 1 && "s"}
+						- {val} Item{val > 1 && "s"}
 					</span>
 				</li>
 			))
