@@ -1,47 +1,53 @@
 ---
-title: "zod vs class-validator & class-transformer"
-description: "Perbandingan zod dengan class-validator & class-transformer di NestJS"
+title: "zod vs class-validator & class-transformer [ENG]"
+description: "Comparison of zod with class-validator & class-transformer in NestJS"
 tags: ["javascript", "validation", "be", "nestjs"]
-publishDate: "17 Dec 2024"
+publishDate: "20 Dec 2024"
 ogImage: "/og-image/nestjs.jpeg"
 devToArticleId: "2162101"
 devToArticleSlug: "zod-vs-class-validator-class-transformer-3oam"
 ---
 
-Sempat bingung, atau setidaknya penasaran antara `zod` atau `class-validator` & `class-transformer`
-sebagai validation library di NestJS.
+Comparison of zod with class-validator & class-transformer in NestJS
+
+I was confused, or at least curious between `zod` or `class-validator` & `class-transformer`
+as a validation library in NestJS.
+
+> Bahasa Indonesia Version
+>
+> https://abdulghofurme.github.io/posts/zod-vs-class-validator-n-class-transformer/
 
 ## Main Point
 
-Langsung aja lah.
+Just go straight to it.
 
-### 1. Alasan pilih `class-validator` & `class-transformer`
+### 1. Reason for choosing `class-validator` & `class-transformer`
 
-- Merupakan _duo_ packages yang umum & digunakan secara luas di NestJS
-- Metode penulisannya _NestJS banget_ karena merupakan _decorator-based validation_
-- clean & seamless integration dengan penggunaannya bersama `class-transformer` & `ValidationPipe`
+- Is a _duo_ package that is common & widely used in NestJS
+- The writing method is "very _NestJS_", because it is _decorator-based validation_
+- clean & seamless integration with its use with `class-transformer` & `ValidationPipe`
 
-### 2. Alasan pilih `zod`
+### 2. Reason for choosing `zod`
 
 - Framework agnostic
-- _Typescript banget_
-- Buat yang lebih prefer _functional_ & _schema-based_ approach
-- Performance & lightweight validation adalah hal yang critical
+- _Very Typescript_
+- For those who prefer _functional_ & _schema-based_ approach
+- Performance & lightweight validation is critical
 
 ## Detail
 
-`class-validator` & `class-transformer` memang 2 packages yang paling umum digunakan sebagai validation di NestJS,
-ya selain karena metode penulisannya yang sama dengan NestJS mengggunakan _decorator-based_,
-juga karena clean & seamless karena bisa digunakan bersama _ValidationPipe_ sebgai _DTO_.
+`class-validator` & `class-transformer` are the 2 packages most commonly used as validation in NestJS,
+yes, apart from the fact that the writing method is the same as NestJS using _decorator-based_,
+also because it is clean & seamless because it can be used with _ValidationPipe_ as _DTO_.
 
-Jadi data/payload yang masuk deterima controller sudah tervalidasi & diubah/transformed sesuai definisinya.
-Sedangkan `zod` masih perlu melakukan validasi secara manual data/payload yang diterima,
-ya mungkin hanya 1 atau maksimal 3 baris lah,
-tapi tentu semakin banyak banyak fungsi validasi yang dibutuhkan semakin banyak pula proses manual ini diperlukan.
+So, the incoming data/payload received by the controller has been validated and changed/transformed according to its definition.
+Meanwhile `zod` still needs to validate the data/payload it receives manually,
+yes, maybe only 1 or a maximum of 3 lines,
+but of course, the more validation functions are needed the more manual processes are required.
 
-## Detail prosedur
+## Procedure details
 
-Berikut detail prosedur(mungkin bersifat _subjective_) untuk bisa dibandingkan.
+Here is a detailed procedure (perhaps _subjective_) for comparison.
 
 ### `class-validator` & `class-transformer`
 
@@ -84,7 +90,7 @@ export class CreateUserDto {
 	@Min(3, { message: "Minimal panjang nama 3 karakter" })
 	name: string;
 
-	@Type(() => Number) // Transform input ke tipe Number
+	@Type(() => Number) // Transform input into Number type
 	@IsNotEmpty({ message: "Nama tidak boleh kosong" })
 	@IsInt({ message: "Umur harus berupa bilangan bulat" })
 	@Min(17, { message: "Minimal umur terdaftar 17 tahun" })
@@ -92,7 +98,7 @@ export class CreateUserDto {
 }
 ```
 
-Cukup panjang ya, tapi begitulah _decorator-based_.
+Quite long, yes, but it's _decorator-based_.
 
 #### 4. Penggunaan validasi
 
@@ -104,10 +110,10 @@ import { CreateUserDto } from "./create-user.dto";
 export class UsersController {
 	@Post()
 	create(@Body() createUserDto: CreateUserDto) {
-		// Pada titik ini data/payload createUserdDto
-		// sudah tervalidasi & diubah sesuai definisinya
-		// developer bisa langsung eksekusi service
-		// atau logic yang lain
+		// At this point data/payload createUserdDto
+		// has been validated & changed according to the definition
+		// developers can directly execute the service
+		// or other logic
 	}
 }
 ```
@@ -142,9 +148,9 @@ export class UserValidation {
 export type TCreateUserPayload = z.infer<typeof UserValidation.CREATE>;
 ```
 
-\*Personal: aku lebih suka baca schema yang ini dibanding di atas
+\*Personal: I prefer reading this schema compared to the one above
 
-#### 3. Penggunaan validasi
+#### 3. Validation Implementations
 
 ```ts
 import { Body, Controller, Post } from "@nestjs/common";
@@ -155,15 +161,15 @@ export class UsersController {
 	@Post()
 	create(@Body() createUserPayload: TCreateUserPayload) {
 		const payload = UserValidation.CREATE.parse(createUserPayload);
-		// Pada titik ini data/payload payload
-		// sudah tervalidasi & diubah sesuai definisinya
-		// developer bisa langsung eksekusi service
-		// atau logic yang lain
+		// At this point data/payload payload
+		// has been validated & changed according to the definition
+		// developers can directly execute the service
+		// or other logic
 	}
 }
 ```
 
 ## Conclusion
 
-Secara pribadi aku lebih prefer cara penggunaan `zod`.
-Namun yang perlu digarisbawahi adalah **pilihlah sesuai kebutuhan & standard tim**.
+Personally, I prefer the use of `zod`.
+However, what needs to be underlined is **choose according to the team's needs & standards**.

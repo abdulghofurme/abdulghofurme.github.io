@@ -50,7 +50,11 @@ const { Content } = await entry.render();
 									<span>{comment.user.name}</span>
 									•
 									<FormattedDate date={new Date(comment.created_at)} />
-									{comment.source && <span>at {comment.source}</span>}
+									{comment.source && (
+										<a href={`https://dev.to/abdulghofurme/${entry.data.devToArticleSlug}`}>
+											at {comment.source}
+										</a>
+									)}
 								</div>
 								<div set:html={comment.html} class="[&>p]:!mb-0 [&>p]:!mt-1" />
 							</div>

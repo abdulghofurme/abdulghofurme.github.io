@@ -31,6 +31,7 @@ const post = defineCollection({
 			tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
 			ogImage: z.string().optional(),
 			devToArticleId: z.string().optional(),
+			devToArticleSlug: z.string().optional(),
 		}),
 });
 
@@ -56,6 +57,7 @@ const portfolio = defineCollection({
 			tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
 			ogImage: z.string(),
 			devToArticleId: z.string().optional(),
+			devToArticleSlug: z.string().optional(),
 		}),
 });
 
