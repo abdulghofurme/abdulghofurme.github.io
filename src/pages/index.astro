@@ -40,12 +40,12 @@ const allExploresByDate = sortMDByDate(allExplores).slice(0, 3) as CollectionEnt
 		</ul>
 	</section>
 
-	<section aria-label="Blog post list" class="mt-16">
+	<section aria-label="Blog explore list" class="mt-16">
 		<div class="mb-4 flex items-center justify-between gap-2">
 			<h2 class="title text-xl"><a href="/explore/">Explore</a></h2>
 			<a class="text-sm" href="/explore/">Lihat semua ({totalExplores}) →</a>
 		</div>
-		<div aria-label="Blog post list" class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
 			{
 				allExploresByDate.map((e) => (
 					<li class="flex flex-col gap-x-2 sm:flex-row">
