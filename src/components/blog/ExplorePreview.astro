@@ -1,0 +1,27 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+type Props = {
+	explore: CollectionEntry<"explore">;
+	withDesc?: boolean;
+};
+
+const { explore } = Astro.props;
+---
+
+<a
+	href={`/explore/${explore.slug}`}
+	class="cactus-link"
+	rel="prefetch"
+	transition:name={explore.data.coverImage.src}
+>
+	<img
+		class="h-40 w-full max-w-full rounded-lg object-cover object-center"
+		src={explore.data.coverImage.src}
+		alt={explore.data.coverImage.alt}
+		width="40px"
+		height="40px"
+		loading="lazy"
+	/>
+	<p class="p-2">{explore.data.title}</p>
+</a>

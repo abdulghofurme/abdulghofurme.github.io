@@ -4,11 +4,13 @@ import FormattedDate from "../FormattedDate.astro";
 // import { date } from "astro/zod";
 
 interface Props {
-	content: CollectionEntry<"post" | "portfolio">;
+	content: CollectionEntry<"post" | "explore">;
+	contentType: "posts" | "explore";
 }
 
 const {
 	content: { data, render },
+	contentType,
 } = Astro.props;
 
 const { remarkPluginFrontmatter } = await render();
@@ -58,7 +60,7 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 					<a
 						class="cactus-link inline-block before:content-['#']"
 						aria-label={`View more blogs with the tag ${tag}`}
-						href={`/posts/tags/${tag}/`}
+						href={`/${contentType}/tags/${tag}/`}
 						data-pagefind-filter="tag"
 					>
 						{tag}

@@ -8,7 +8,7 @@ coverImage: { src: "/img/3d-text.png", alt: "3D Text" }
 devToArticleId: "2162101"
 ---
 
-## [Portfolio URL](https://3js-jubilant-chainsaw.vercel.app)
+## [URL here](https://3js-jubilant-chainsaw.vercel.app)
 
 ## Background
 

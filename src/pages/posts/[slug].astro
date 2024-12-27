@@ -28,7 +28,7 @@ if (entry.data.devToArticleId) {
 const { Content } = await entry.render();
 ---
 
-<PostLayout post={entry} comment={comments.length > 0}>
+<PostLayout post={entry} comment={comments.length > 0} contentType="posts">
 	<Content />
 	{
 		comments.length > 0 && (
