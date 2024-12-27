@@ -4,8 +4,8 @@ description: "Transform zod validation error into FE readable key message object
 tags: ["typescript", "validation", "be", "nestjs"]
 publishDate: "27 Dec 2024"
 ogImage: "/og-image/nestjs.jpeg"
-# devToArticleId: ""
-# devToArticleSlug: ""
+devToArticleId: "2177692"
+devToArticleSlug: "transform-zod-error-into-readable-error-response-4d7p"
 ---
 
 ## Perspective
