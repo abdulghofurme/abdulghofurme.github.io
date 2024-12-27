@@ -9,6 +9,6 @@ export {
 	type Comment,
 	type DevToComment,
 } from "./post";
-export { getAllPortfolios } from "./portfolio";
+export { getAllExplores } from "./explore";
 export { generateToc } from "./generateToc";
 export type { TocItem } from "./generateToc";
