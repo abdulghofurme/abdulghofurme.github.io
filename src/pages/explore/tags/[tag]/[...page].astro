@@ -2,17 +2,17 @@
 import type { Page, GetStaticPaths } from "astro";
 import type { CollectionEntry } from "astro:content";
 import PageLayout from "@/layouts/Base";
-import PostPreview from "@/components/blog/PostPreview";
+import ExplorePreview from "@/components/blog/ExplorePreview";
 import Pagination from "@/components/Paginator";
-import { getAllPosts, getUniqueTags, sortMDByDate } from "@/utils";
+import { getAllExplores, getUniqueTags, sortMDByDate } from "@/utils";
 
 export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
-	const allPosts = await getAllPosts();
-	const allPostsByDate = sortMDByDate(allPosts);
-	const uniqueTags = getUniqueTags(allPostsByDate);
+	const allExplores = await getAllExplores();
+	const allExploresByDate = sortMDByDate(allExplores);
+	const uniqueTags = getUniqueTags(allExploresByDate);
 
 	return uniqueTags.flatMap((tag) => {
-		const filterPosts = allPostsByDate.filter((post) => post.data.tags.includes(tag));
+		const filterPosts = allExploresByDate.filter((post) => post.data.tags.includes(tag));
 		return paginate(filterPosts, {
 			params: { tag },
 			pageSize: 10,
@@ -55,15 +55,18 @@ const paginationProps = {
 		<span class="text-xl">#{tag}</span>
 	</h1>
 	<section aria-label="Blog post list">
-		<ul class="space-y-8">
+		<div
+			aria-label="Blog explore list"
+			class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3"
+		>
 			{
-				page.data.map((p) => (
-					<li class="flex flex-col flex-wrap gap-2 sm:flex-row [&_q]:basis-full">
-						<PostPreview post={p} as="h2" withDesc />
+				page.data.map((e) => (
+					<li class="flex flex-col gap-x-2 sm:flex-row">
+						<ExplorePreview explore={e} />
 					</li>
 				))
 			}
-		</ul>
+		</div>
 		<Pagination {...paginationProps} />
 	</section>
 </PageLayout>

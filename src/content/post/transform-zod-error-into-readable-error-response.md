@@ -1,7 +1,7 @@
 ---
 title: "Transform zod error into readable error response"
 description: "Transform zod validation error into FE readable key message object in NestJS"
-tags: ["javascript", "validation", "be", "nestjs"]
+tags: ["typescript", "validation", "be", "nestjs"]
 publishDate: "27 Dec 2024"
 ogImage: "/og-image/nestjs.jpeg"
 # devToArticleId: ""

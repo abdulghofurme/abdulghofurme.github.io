@@ -1,7 +1,7 @@
 ---
 title: "zod vs class-validator & class-transformer [ENG]"
 description: "Comparison of zod with class-validator & class-transformer in NestJS"
-tags: ["javascript", "validation", "be", "nestjs"]
+tags: ["typescript", "validation", "be", "nestjs"]
 publishDate: "20 Dec 2024"
 ogImage: "/og-image/nestjs.jpeg"
 devToArticleId: "2162101"
