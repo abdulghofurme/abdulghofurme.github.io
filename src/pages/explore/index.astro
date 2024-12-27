@@ -1,0 +1,30 @@
+---
+import PageLayout from "@/layouts/Base";
+import TagsAside from "@/components/TagsAside";
+import { getAllExplores, getUniqueTags } from "@/utils";
+import ExplorePreview from "@/components/blog/ExplorePreview";
+
+const allExplores = await getAllExplores();
+const uniqueTags = getUniqueTags(allExplores);
+
+const meta = {
+	title: "All Explore",
+	description: "A list of explores that I've created & documented",
+};
+---
+
+<PageLayout meta={meta}>
+	<div class="mb-6 flex items-center gap-2">
+		<h1 class="title">Explore</h1>
+		<span class="text-sm">({allExplores.length})</span>
+	</div>
+	<div class="grid gap-y-16 sm:grid-cols-[3fr_1fr] sm:gap-x-8">
+		<section
+			aria-label="Blog post list"
+			class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3"
+		>
+			{allExplores.map((explore) => <ExplorePreview explore={explore} />)}
+		</section>
+		<TagsAside uniqueTags={uniqueTags} seeMoreURL="/explore/tags" />
+	</div>
+</PageLayout>

@@ -1,24 +1,31 @@
 ---
-title: "Transform zod error into readable error response"
+title: "Transform zod error into readable error response [ENG]"
 description: "Transform zod validation error into FE readable key message object in NestJS"
 tags: ["typescript", "validation", "be", "nestjs"]
-publishDate: "27 Dec 2024"
+publishDate: "28 Dec 2024"
 ogImage: "/og-image/nestjs.jpeg"
+draft: true
 # devToArticleId: ""
 # devToArticleSlug: ""
 ---
 
+Transform zod validation error into FE readable key message object in NestJS
+
+> Bahasa Indonesia Version
+>
+> https://abdulghofurme.github.io/posts/transform-zod-error-into-readable-error-response
+
 ## Perspective
 
-Sebagai Frontend Engineer,
-beberapa kali menjumpai error validation yang diterima _kurang_ mudah diolah.
+As a Frontend Engineer,
+I have occasionally encountered validation errors that are _less easy_ to process.
 
-Well, yah memang aku bukan expert sih,
-tapi menurutku setidaknya lebih baik apabila validation error yang diterima mudah untuk diolah.
+Well, I’m not an expert,
+but in my opinion, it would be better if the validation errors received were easier to handle.
 
 ## Purpose
 
-Mengubah zod validation error seperti berikut
+To transform Zod validation errors like this:
 
 ```json
 {
@@ -29,7 +36,7 @@ Mengubah zod validation error seperti berikut
 			"type": "string",
 			"inclusive": true,
 			"exact": false,
-			"message": "Panjang nama kategori minimal 3 karakter",
+			"message": "The category name must be at least 3 characters long",
 			"path": ["name"]
 		}
 	],
@@ -37,33 +44,33 @@ Mengubah zod validation error seperti berikut
 }
 ```
 
-menjadi error response dengan format `key: message` seperti berikut
+into an error response in the key: message format like this:
 
 ```json
 {
-	"name": "Panjang nama kategori minimal 3 karakter"
+	"name": "The category name must be at least 3 characters long"
 }
 ```
 
-Dengan format `key: message` seperti di atas,
-setidaknya menurutku lebih mudah dibaca & diolah.
+With the `key: message` format above,
+I think it is easier to read and process.
 
-Sekali lagi,
-bukan berarti yang pertama susah.
-Tentu semua bisa diolah,
-hanya saja diperlukan satu lagi proses untuk mengambil pesan error dari masing-masing input yang ada.
+Once again,
+this doesn’t mean the first format is difficult. Of course, it can be processed, but it requires an additional step to extract error messages from each input field.
 
 ## The Code
 
-Kita akan menggunakan **Error/Exception Filter**,
-yang merupakan standard yang digunakan untuk menangai error yang terjadi, secara **terpusat**.
+We will use an **Error/Exception Filter**,
+a standard approach for handling errors **centrally**.
 
-Kita bisa generate filter dengan command
+You can generate the filter with this command:
 
 ```bash
 nest g f error
 # nest generate filter [filter_name]
 ```
+
+Here’s the implementation:
 
 ```ts
 // ./error/error.filter.ts
@@ -122,7 +129,7 @@ export class ErrorFilter<T> implements ExceptionFilter {
 }
 ```
 
-Selanjutnya implementasikan filter tersebut dalam application
+Next, apply the filter to your application:
 
 ```ts
 // app/global module
@@ -160,25 +167,24 @@ if (exception instanceof HttpException) {
 ...
 ```
 
-Menangkap error _HttpException_ error dan meneruskannya, sehingga
+Handles the HttpException and forwards it, so that:
 
 ```ts
 ...
 throw new HttpException(
-  'Kategori tidak ditemukan',
+  'Category not found',
   HttpStatus.NOT_FOUND,
 );
 ...
-
 ```
 
-akan mengembalikan response
+will return this response:
 
 ```json
 {
 	"status": 404,
 	"data": {
-		"message": "Kategori tidak ditemukan"
+		"message": "Category not found"
 	}
 }
 ```
@@ -199,7 +205,7 @@ else if (exception instanceof ZodError) {
 ...
 ```
 
-Akan menangkap ZodError, dan
+Captures a ZodError, and the method:
 
 ```ts
 ...
@@ -216,17 +222,17 @@ zodErrorToKeyedObject(error: ZodError): Record<string, string> {
 ...
 ```
 
-akan mengubah `ZodError` menjadi `key: message` object error seperti tujuan kita di atas.
+transforms the ZodError into a key: message error object as per our goal.
 
-Sehingga response yang diterima seperti berikut
+This results in a response like this:
 
 ```json
 {
-	"status": 404,
+	"status": 400,
 	"data": {
 		"message": "Validation error",
 		"errors": {
-			"name": "error message field specific"
+			"name": "Field-specific error message"
 		}
 	}
 }
@@ -247,18 +253,18 @@ else {
 ...
 ```
 
-Well, ya itu akan mengambalikan error message internal server error `500`.
+Handles any other errors, returning an internal server error (500).
 
 ## Conclusion
 
-Aku kira semua punya pendapat & standard masing-masing.
+I believe everyone has their own opinions and standards.
 
-Namun dari sudut pandang FE noob ini,
-error validation akan lebih mudah diolah apabila berbentuk object `key: message`.
-Sehingga langsung bisa diambil & ditampilkan di masing-masing inputnya.
+However, from this noob FE’s perspective,
+validation errors are easier to handle if they are in the key: message object format,
+allowing them to be directly extracted and displayed for each input field.
 
-Terlepas dari itu, apabila team sudah punya standard yang berbeda.
-Pastikan menerima, bertanya & diskusikan dengan baik.
-Barangkali ada alasan lebih bagus dari hal tersebut.
+That said, if the team already has a different standard,
+make sure to accept, ask questions, and discuss it well.
+There might be better reasons behind it.
 
-Bolehlah dibagi pertimbangan-pertimbangan lain tersebut, ;)
+Feel free to share other considerations. 😉

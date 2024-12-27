@@ -35,7 +35,7 @@ const post = defineCollection({
 		}),
 });
 
-const portfolio = defineCollection({
+const explore = defineCollection({
 	type: "content",
 	schema: () =>
 		z.object({
@@ -61,4 +61,4 @@ const portfolio = defineCollection({
 		}),
 });
 
-export const collections = { post, portfolio };
+export const collections = { post, explore };
