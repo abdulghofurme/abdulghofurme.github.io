@@ -25,6 +25,7 @@ const post = defineCollection({
 				.object({
 					src: z.string(),
 					alt: z.string(),
+					fit: z.enum(["contain", "cover"]).default("cover").optional(),
 				})
 				.optional(),
 			draft: z.boolean().default(false),
@@ -52,6 +53,7 @@ const explore = defineCollection({
 			coverImage: z.object({
 				src: z.string(),
 				alt: z.string(),
+				fit: z.enum(["contain", "cover"]).default("cover").optional(),
 			}),
 			draft: z.boolean().default(false),
 			tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),

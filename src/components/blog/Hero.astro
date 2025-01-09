@@ -78,7 +78,7 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 			<img
 				src={data.coverImage.src}
 				alt={data.coverImage.alt}
-				class="object-cover"
+				class={data.coverImage.fit === "contain" ? "object-contain" : "object-cover"}
 				loading="eager"
 				fetchpriority="high"
 			/>
