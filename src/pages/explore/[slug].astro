@@ -1,6 +1,6 @@
 ---
 import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
-import PostLayout from "@/layouts/BlogPost";
+import ExploreLayout from "@/layouts/ExplorePost";
 import { getAllExplores } from "@/utils";
 
 export const getStaticPaths = (async () => {
@@ -17,6 +17,6 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<PostLayout post={entry} contentType="explore">
+<ExploreLayout explore={entry}>
 	<Content />
-</PostLayout>
+</ExploreLayout>

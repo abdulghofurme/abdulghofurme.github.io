@@ -2,8 +2,8 @@
 import PageLayout from "@/layouts/Base";
 import PostPreview from "@/components/blog/PostPreview";
 import SocialList from "@/components/SocialList";
-import { getAllExplores, getAllPosts, sortMDByDate } from "@/utils";
-import ExplorePreview from "@/components/blog/ExplorePreview";
+import { getAllExplores, getAllPosts, sortPostsByDate, sortExploresByDate } from "@/utils";
+import ExploreList from "@/components/explore/ExploreList";
 import type { CollectionEntry } from "astro:content";
 
 const MAX_POSTS = 10;
@@ -11,8 +11,11 @@ const allPosts = await getAllPosts();
 const allExplores = await getAllExplores();
 const totalPosts = allPosts.length;
 const totalExplores = allExplores.length;
-const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS) as CollectionEntry<"post">[];
-const allExploresByDate = sortMDByDate(allExplores).slice(0, 3) as CollectionEntry<"explore">[];
+const allPostsByDate = sortPostsByDate(allPosts).slice(0, MAX_POSTS) as CollectionEntry<"post">[];
+const allExploresByDate = sortExploresByDate(allExplores).slice(
+	0,
+	3
+) as CollectionEntry<"explore">[];
 ---
 
 <PageLayout meta={{ title: "Home" }}>
@@ -45,14 +48,6 @@ const allExploresByDate = sortMDByDate(allExplores).slice(0, 3) as CollectionEnt
 			<h2 class="title text-xl"><a href="/explore/">Explore</a></h2>
 			<a class="text-sm" href="/explore/">Lihat semua ({totalExplores}) →</a>
 		</div>
-		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-			{
-				allExploresByDate.map((e) => (
-					<li class="flex flex-col gap-x-2 sm:flex-row">
-						<ExplorePreview explore={e} />
-					</li>
-				))
-			}
-		</div>
+		<ExploreList explores={allExploresByDate} />
 	</section>
 </PageLayout>

@@ -3,7 +3,6 @@ title: "PWA - Installable"
 description: "Progressive Web Apps: installable & ringan, apakah akan menggantikan native apps???"
 tags: ["web", "diskusi", "javascript"]
 publishDate: "17 Dec 2020"
-ogImage: ""
 ---
 
 Setelah mengerti apa itu PWA dan benefit-nya.

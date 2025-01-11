@@ -1,11 +1,11 @@
 ---
 import PageLayout from "@/layouts/Base";
-import TagsAside from "@/components/TagsAside";
-import { getAllExplores, getUniqueTags } from "@/utils";
-import ExplorePreview from "@/components/blog/ExplorePreview";
+import TechsAside from "@/components/TechsAside";
+import { getAllExplores, getUniqueTechs } from "@/utils";
+import ExploreList from "@/components/explore/ExploreList";
 
 const allExplores = await getAllExplores();
-const uniqueTags = getUniqueTags(allExplores);
+const uniqueTechs = getUniqueTechs(allExplores);
 
 const meta = {
 	title: "All Explore",
@@ -19,12 +19,7 @@ const meta = {
 		<span class="text-sm">({allExplores.length})</span>
 	</div>
 	<div class="grid gap-y-16 sm:grid-cols-[3fr_1fr] sm:gap-x-8">
-		<section
-			aria-label="Blog post list"
-			class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3"
-		>
-			{allExplores.map((explore) => <ExplorePreview explore={explore} />)}
-		</section>
-		<TagsAside uniqueTags={uniqueTags} seeMoreURL="/explore/tags" />
+		<ExploreList explores={allExplores} />
+		<TechsAside uniqueTechs={uniqueTechs} seeMoreURL="/explore/techs" />
 	</div>
 </PageLayout>

@@ -2,7 +2,6 @@
 title: "Yei.. Personal Website Resmi Dibuat #curhatabis"
 description: "Personal Website: tempat curhat & mengkaji ulang yang dipelajari sejauh ini"
 publishDate: "12 Sep 2019"
-ogImage: ""
 ---
 
 Sesuai dengan judul, ini adalah web pribadiku yang pertama resmi aku publikasikan. Sebenarnya yang ke-2. Versi beta dari abdulghofur.site yang aku buat berbulan bulan yang lalu, hampir satu tahun, dengan beli domain seharga Rp 14.000 untuk setahun masa berlaku.

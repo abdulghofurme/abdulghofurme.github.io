@@ -5,12 +5,12 @@ import PageLayout from "@/layouts/Base";
 import PostPreview from "@/components/blog/PostPreview";
 import Pagination from "@/components/Paginator";
 import TagsAside from "@/components/TagsAside";
-import { getAllPosts, getUniqueTags, sortMDByDate } from "@/utils";
+import { getAllPosts, getUniqueTags, sortPostsByDate } from "@/utils";
 
 export const getStaticPaths = (async ({ paginate }) => {
 	const allPosts = await getAllPosts();
 
-	const allPostsByDate = sortMDByDate(allPosts);
+	const allPostsByDate = sortPostsByDate(allPosts);
 	const uniqueTags = getUniqueTags(allPosts);
 	return paginate(allPostsByDate, { props: { uniqueTags }, pageSize: 10 });
 }) satisfies GetStaticPaths;

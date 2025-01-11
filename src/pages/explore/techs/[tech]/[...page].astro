@@ -1,0 +1,61 @@
+---
+import type { Page, GetStaticPaths } from "astro";
+import type { CollectionEntry } from "astro:content";
+import PageLayout from "@/layouts/Base";
+import ExploreList from "@/components/explore/ExploreList";
+import Pagination from "@/components/Paginator";
+import { getAllExplores, getUniqueTechs, sortExploresByDate } from "@/utils";
+
+export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
+	const allExplores = await getAllExplores();
+	const allExploresByDate = sortExploresByDate(allExplores);
+	const uniqueTechs = getUniqueTechs(allExploresByDate);
+
+	return uniqueTechs.flatMap((tech) => {
+		const filterPosts = allExploresByDate.filter((post) => post.data.techs.includes(tech));
+		return paginate(filterPosts, {
+			params: { tech },
+			pageSize: 10,
+		});
+	});
+};
+
+interface Props {
+	page: Page<CollectionEntry<"explore">>;
+}
+
+const { page } = Astro.props;
+const { tech } = Astro.params;
+
+const meta = {
+	title: `Technologies: ${tech}`,
+	description: `View all posts with the technology - ${tech}`,
+};
+
+const paginationProps = {
+	...(page.url.prev && {
+		prevUrl: {
+			url: page.url.prev,
+			text: `← Previous Techs`,
+		},
+	}),
+	...(page.url.next && {
+		nextUrl: {
+			url: page.url.next,
+			text: `Next Techs →`,
+		},
+	}),
+};
+---
+
+<PageLayout meta={meta}>
+	<h1 class="title mb-6 flex items-center">
+		<a href="/explore/techs/" class="text-accent sm:hover:underline">Technologies</a>
+		<span class="me-3 ms-2">→</span>
+		<span class="text-xl">{tech}</span>
+	</h1>
+	<section aria-label="Blog explore list">
+		<ExploreList explores={page.data} />
+		<Pagination {...paginationProps} />
+	</section>
+</PageLayout>

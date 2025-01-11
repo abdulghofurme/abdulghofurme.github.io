@@ -3,7 +3,6 @@ title: "Kotlin bagian 3: Control Flow & Pengenalan Fungsi"
 description: "Kotlin control flow - mengenal arus kerja program & mengaturnya pada bahasa kotlin"
 tags: ["kotlin", "belajarapa"]
 publishDate: "16 Sep 2019"
-ogImage: ""
 ---
 
 Fokus kita kali ini adalah membahas bagaimana kita mengandalikan alur kerja program yang kita buat. Dan sedikit penganalan fungsi pada kotlin.
