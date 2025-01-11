@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import TechList from "./TechList.astro";
 
 type Props = {
 	explore: CollectionEntry<"explore">;
@@ -11,7 +12,7 @@ const { explore } = Astro.props;
 
 <a
 	href={`/explore/${explore.slug}`}
-	class="cactus-link"
+	class="flex flex-col gap-2 rounded-lg bg-accent-2/10 pb-2 hover:bg-accent-2/20"
 	rel="prefetch"
 	transition:name={explore.data.coverImage.src}
 >
@@ -23,5 +24,7 @@ const { explore } = Astro.props;
 		height="40px"
 		loading="lazy"
 	/>
+
 	<p class="p-2">{explore.data.title}</p>
+	<TechList class="p-2" techs={explore.data.techs} as="span" />
 </a>

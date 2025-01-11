@@ -3,7 +3,6 @@ title: "Pengenalan: Apa itu Progressive Web Apps"
 description: "Progressive Web Apps: apakah akan menggantikan native apps???"
 tags: ["web", "diskusi", "javascript"]
 publishDate: "15 Dec 2020"
-ogImage: ""
 ---
 
 Progressive **Web** **App**

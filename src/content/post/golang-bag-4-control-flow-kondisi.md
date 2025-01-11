@@ -3,7 +3,6 @@ title: "Golang bagian-4 Control-Flow - Kondisi"
 description: "Golang condition - mengontrol alur kerja program pada bahasa go"
 tags: ["golang", "belajarapa"]
 publishDate: "29 May 2020"
-ogImage: ""
 ---
 
 ## Control Flow

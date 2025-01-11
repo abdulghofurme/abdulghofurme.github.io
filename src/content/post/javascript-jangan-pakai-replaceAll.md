@@ -3,7 +3,6 @@ title: "JavaScript: Jangan pakai replaceAll"
 description: "Javasript - awas... berhenti menggunakan replaceAll"
 tags: ["javascript", "sharingapa"]
 publishDate: "25 Jan 2022"
-ogImage: ""
 ---
 
 Daripada menggunakan `replaceAll`, lebih baik menggunakan `replace`.

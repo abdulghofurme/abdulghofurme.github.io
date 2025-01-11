@@ -3,7 +3,6 @@ title: "Golang bagian-7 Pengenalan Slice"
 description: "Golang slice - mengenal slice dan kegunaannya pada bahasa go"
 tags: ["golang", "belajarapa"]
 publishDate: "06 Jun 2020"
-ogImage: ""
 ---
 
 ## Slice

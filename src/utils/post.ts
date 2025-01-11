@@ -8,27 +8,19 @@ export async function getAllPosts() {
 	});
 }
 
-export function sortMDByDate(all: Array<CollectionEntry<"post" | "explore">>) {
-	return all.sort((a, b) => {
-		const aDate = new Date(a.data.updatedDate ?? a.data.publishDate).valueOf();
-		const bDate = new Date(b.data.updatedDate ?? b.data.publishDate).valueOf();
-		return bDate - aDate;
-	});
-}
-
-/** Note: This function doesn't filter draft posts & explores, pass it the result of getAllPosts, getAllExplores above to do so. */
-export function getAllTags(all: Array<CollectionEntry<"post" | "explore">>) {
+/** Note: This function doesn't filter draft posts & explores, pass it the result of getAllPosts above to do so. */
+export function getAllTags(all: Array<CollectionEntry<"post">>) {
 	return all.flatMap((each) => [...each.data.tags]);
 }
 
-/** Note: This function doesn't filter draft posts & explores, pass it the result of getAllPosts, getAllExplores above to do so. */
-export function getUniqueTags(all: Array<CollectionEntry<"post" | "explore">>) {
+/** Note: This function doesn't filter draft posts & explores, pass it the result of getAllPosts above to do so. */
+export function getUniqueTags(all: Array<CollectionEntry<"post">>) {
 	return [...new Set(getAllTags(all))];
 }
 
-/** Note: This function doesn't filter draft posts & explores, pass it the result of getAllPosts, getAllExplores above to do so. */
+/** Note: This function doesn't filter draft posts & explores, pass it the result of getAllPosts above to do so. */
 export function getUniqueTagsWithCount(
-	all: Array<CollectionEntry<"post" | "explore">>,
+	all: Array<CollectionEntry<"post">>,
 ): Array<[string, number]> {
 	return [
 		...getAllTags(all).reduce(
@@ -36,6 +28,14 @@ export function getUniqueTagsWithCount(
 			new Map<string, number>(),
 		),
 	].sort((a, b) => b[1] - a[1]);
+}
+
+export function sortPostsByDate(all: Array<CollectionEntry<"post">>) {
+	return all.sort((a, b) => {
+		const aDate = new Date(a.data.updatedDate ?? a.data.publishDate).valueOf();
+		const bDate = new Date(b.data.updatedDate ?? b.data.publishDate).valueOf();
+		return bDate - aDate;
+	});
 }
 
 export type Comment = {

@@ -1,0 +1,33 @@
+---
+interface Props {
+	uniqueTechs: string[];
+	seeMoreURL: string;
+}
+const { uniqueTechs, seeMoreURL } = Astro.props;
+---
+
+{
+	!!uniqueTechs.length && (
+		<aside>
+			<h2 class="mb-4 flex items-center text-lg font-semibold">Technologies</h2>
+			<ul class="flex flex-wrap gap-2 text-bgColor">
+				{uniqueTechs.map((tech) => (
+					<li>
+						<a
+							class="flex items-center justify-center rounded-lg bg-accent p-1"
+							href={`/explore/techs/${tech}/`}
+							aria-label={`View all explores with the tech: ${tech}`}
+						>
+							{tech}
+						</a>
+					</li>
+				))}
+			</ul>
+			<span class="mt-4 block sm:text-end">
+				<a class="sm:hover:text-accent" href={seeMoreURL} aria-label="View all explore techs">
+					View all →
+				</a>
+			</span>
+		</aside>
+	)
+}

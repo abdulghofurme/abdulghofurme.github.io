@@ -3,7 +3,6 @@ title: "Golang bagian-13 Pengenalan Struct"
 description: "Golang struct - mengenal dan cara menngunakan class pada bahasa go"
 tags: ["golang", "belajarapa"]
 publishDate: "14 Jun 2020"
-ogImage: ""
 ---
 
 ## Struct

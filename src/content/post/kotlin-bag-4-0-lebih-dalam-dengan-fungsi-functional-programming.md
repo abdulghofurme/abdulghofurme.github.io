@@ -3,7 +3,6 @@ title: "Kotlin bagian 4.0: Lebih dalam dengan Fungsi: Functional Programming"
 description: "Kotlin - mengenal fungsi dan cara penggunaannya pada bahasa kotlin"
 tags: ["kotlin", "belajarapa"]
 publishDate: "29 Sep 2019"
-ogImage: ""
 ---
 
 Begitulah aku, aku yang kan selalu ada untukmu di saat kamu butuh, kapanpun kamu panggil, dimanapun. Untukmu kulakukan apapun, sesuai keinginanmu.... Untukmu, apapun....

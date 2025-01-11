@@ -3,7 +3,6 @@ title: "Golang bagian-8 len, cap, append, copy pada Slice"
 description: "Golang slice - mengenal built in function yang dapat digunakan"
 tags: ["golang", "belajarapa"]
 publishDate: "07 Jun 2020"
-ogImage: ""
 ---
 
 Pada slice kita dapat menggunakan kode-kode di atas.

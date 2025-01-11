@@ -3,7 +3,6 @@ title: "Kotlin bagian-1: Hello Kotlin, Variable & Data Type"
 description: "Kotlin - mengenal kotlin, implementasi variable & data type pada bahasa kotlin"
 tags: ["kotlin", "belajarapa"]
 publishDate: "14 Sep 2019"
-ogImage: ""
 ---
 
 Hei... **abdulghofur** lagi.. Article ke-2, doakan konsisten ya.. _tenang aja, ngga bakal dihitungin terus ko_

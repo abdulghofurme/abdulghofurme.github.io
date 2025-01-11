@@ -1,32 +1,32 @@
 ---
 import PageLayout from "@/layouts/Base";
-import { getAllExplores, getUniqueTagsWithCount } from "@/utils";
+import { getAllExplores, getUniqueTechsWithCount } from "@/utils";
 
 const allExplores = await getAllExplores();
-const allTags = getUniqueTagsWithCount(allExplores);
+const allTechs = getUniqueTechsWithCount(allExplores);
 
 const meta = {
-	title: "All Tags",
-	description: "A list of all the topics I've written about in my explore",
+	title: "All Techs",
+	description: "A list of all the techs I've used in my explore",
 };
 ---
 
 <PageLayout meta={meta}>
 	<div class="mb-6 flex items-center gap-2">
-		<h1 class="title">Explore Tags</h1>
-		<span class="text-sm">({allTags.length})</span>
+		<h1 class="title">Technologies</h1>
+		<span class="text-sm">({allTechs.length})</span>
 	</div>
 	<ul class="space-y-4">
 		{
-			allTags.map(([tag, val]) => (
+			allTechs.map(([tech, val]) => (
 				<li class="flex items-center gap-x-2">
 					<a
 						class="cactus-link inline-block"
-						href={`/explore/tags/${tag}/`}
-						title={`View posts with the tag: ${tag}`}
+						href={`/explore/techs/${tech}/`}
+						title={`View posts with the tech: ${tech}`}
 						rel="prefetch"
 					>
-						&#35;{tag}
+						{tech}
 					</a>
 					<span class="inline-block">
 						- {val} Post{val > 1 && "s"}

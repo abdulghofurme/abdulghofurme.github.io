@@ -2,13 +2,18 @@ export { getFormattedDate } from "./date";
 export { elementHasClass, toggleClass } from "./domElement";
 export {
 	getAllPosts,
-	sortMDByDate,
 	getUniqueTags,
 	getUniqueTagsWithCount,
 	parseCommentDevTo,
+	sortPostsByDate,
 	type Comment,
 	type DevToComment,
 } from "./post";
-export { getAllExplores } from "./explore";
+export {
+	getAllExplores,
+	getUniqueTechs,
+	getUniqueTechsWithCount,
+	sortExploresByDate,
+} from "./explore";
 export { generateToc } from "./generateToc";
 export type { TocItem } from "./generateToc";

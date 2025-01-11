@@ -33,6 +33,7 @@ const post = defineCollection({
 			ogImage: z.string().optional(),
 			devToArticleId: z.string().optional(),
 			devToArticleSlug: z.string().optional(),
+			relatedExplores: z.array(z.string()).default([]).optional(),
 		}),
 });
 
@@ -50,16 +51,16 @@ const explore = defineCollection({
 				.string()
 				.optional()
 				.transform((str) => (str ? new Date(str) : undefined)),
+			draft: z.boolean().default(false),
+			url: z.string().url(),
+			techs: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
+			ogImage: z.string(),
 			coverImage: z.object({
 				src: z.string(),
 				alt: z.string(),
 				fit: z.enum(["contain", "cover"]).default("cover").optional(),
 			}),
-			draft: z.boolean().default(false),
-			tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
-			ogImage: z.string(),
-			devToArticleId: z.string().optional(),
-			devToArticleSlug: z.string().optional(),
+			relatedArticles: z.array(z.string()).default([]).optional(),
 		}),
 });
 

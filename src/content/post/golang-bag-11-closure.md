@@ -3,7 +3,7 @@ title: "Golang bagian-11 Closure"
 description: "Golang closure - mengenal closure dan implementasinya pada bahasa go"
 tags: ["golang", "belajarapa"]
 publishDate: "10 Jun 2020"
-ogImage: ""
+
 draft: true
 ---
 
