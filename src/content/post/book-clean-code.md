@@ -42,7 +42,7 @@ Salah satu cerita yang membekas
 >
 > Seiring feature bertambah,
 > bertambah buruk pula kode yang ada.
-> Sampai pada titik kode itu tidak sapat di-manage lagi.
+> Sampai pada titik kode itu tidak dapat di-manage lagi.
 >
 > **It was the bad code that brought the company down**
 
