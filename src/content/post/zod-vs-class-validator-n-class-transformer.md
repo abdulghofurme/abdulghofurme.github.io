@@ -123,7 +123,7 @@ npm install zod
 #### 2. Create Validation Schema
 
 ```ts
-// user.validaiton.ts
+// user.validation.ts
 import { z, ZodType } from "zod";
 
 export class UserValidation {
