@@ -14,7 +14,7 @@ const { explore } = Astro.props;
 	href={`/explore/${explore.slug}`}
 	class="flex flex-col gap-2 rounded-lg bg-accent-2/10 pb-2 hover:bg-accent-2/20"
 	rel="prefetch"
-	transition:name={explore.data.coverImage.src}
+	transition:name={explore.data.title}
 >
 	<img
 		class="h-40 w-full max-w-full rounded-lg object-cover object-center"
