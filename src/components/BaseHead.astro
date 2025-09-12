@@ -14,181 +14,80 @@ const socialImageURL = new URL(ogImage ? ogImage : "/og-omage/default.png", Astr
 ---
 
 <meta charset="utf-8" />
-<meta
-	name="viewport"
-	content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
-/>
-<meta
-	http-equiv="X-UA-Compatible"
-	content="IE=edge"
-/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <title>{siteTitle}</title>
 
 {/* Icons / Favicon */}
-<link
-	rel="icon"
-	href="/icon-2.svg"
-	sizes="any"
-/>
-<link
-	rel="icon"
-	href="/icon-2.svg"
-	type="image/svg+xml"
-/>
-<link
-	rel="apple-touch-icon"
-	href="/icon-2.svg"
-/>
-<link
-	rel="manifest"
-	href="/manifest.webmanifest"
-/>
-<link
-	rel="canonical"
-	href={canonicalURL}
-/>
+<link rel="icon" href="/icon-2.svg" sizes="any" />
+<link rel="icon" href="/icon-2.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/icon-2.svg" />
+<link rel="manifest" href="/manifest.webmanifest" />
+<link rel="canonical" href={canonicalURL} />
 
 {/* Primary Meta Tags */}
-<meta
-	name="title"
-	content={siteTitle}
-/>
-<meta
-	name="description"
-	content={description}
-/>
-<meta
-	name="author"
-	content={siteConfig.author}
-/>
+<meta name="title" content={siteTitle} />
+<meta name="description" content={description} />
+<meta name="author" content={siteConfig.author} />
 
 {/* Theme Colour */}
-<meta
-	name="theme-color"
-	content=""
-/>
+<meta name="theme-color" content="" />
 
 {/* Open Graph / Facebook */}
-<meta
-	property="og:type"
-	content={articleDate ? "article" : "website"}
-/>
-<meta
-	property="og:title"
-	content={title}
-/>
-<meta
-	property="og:description"
-	content={description}
-/>
-<meta
-	property="og:url"
-	content={canonicalURL}
-/>
-<meta
-	property="og:site_name"
-	content={siteConfig.title}
-/>
-<meta
-	property="og:locale"
-	content={siteConfig.ogLocale}
-/>
-<meta
-	property="og:image"
-	content={socialImageURL}
-/>
-<meta
-	property="og:image:width"
-	content="1200"
-/>
-<meta
-	property="og:image:height"
-	content="630"
-/>
+<meta property="og:type" content={articleDate ? "article" : "website"} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:site_name" content={siteConfig.title} />
+<meta property="og:locale" content={siteConfig.ogLocale} />
+<meta property="og:image" content={socialImageURL} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 {
 	articleDate && (
 		<>
-			<meta
-				property="article:author"
-				content={siteConfig.author}
-			/>
-			<meta
-				property="article:published_time"
-				content={articleDate}
-			/>
+			<meta property="article:author" content={siteConfig.author} />
+			<meta property="article:published_time" content={articleDate} />
 		</>
 	)
 }
 
 {/* Twitter */}
-<meta
-	property="twitter:card"
-	content="summary_large_image"
-/>
-<meta
-	property="twitter:url"
-	content={canonicalURL}
-/>
-<meta
-	property="twitter:title"
-	content={title}
-/>
-<meta
-	property="twitter:description"
-	content={description}
-/>
-<meta
-	property="twitter:image"
-	content={socialImageURL}
-/>
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={socialImageURL} />
 
 {/* Sitemap */}
-<link
-	rel="sitemap"
-	href="/sitemap-index.xml"
-/>
+<link rel="sitemap" href="/sitemap-index.xml" />
 
 {/* RSS auto-discovery */}
-<link
-	rel="alternate"
-	type="application/rss+xml"
-	title={siteConfig.title}
-	href="/rss.xml"
-/>
+<link rel="alternate" type="application/rss+xml" title={siteConfig.title} href="/rss.xml" />
 
 {/* Webmentions */}
 {
 	siteConfig.webmentions && (
 		<>
-			<link
-				rel="webmention"
-				href={siteConfig.webmentions.link}
-			/>
+			<link rel="webmention" href={siteConfig.webmentions.link} />
 			{siteConfig.webmentions.pingback && (
-				<link
-					rel="pingback"
-					href={siteConfig.webmentions.pingback}
-				/>
+				<link rel="pingback" href={siteConfig.webmentions.pingback} />
 			)}
 		</>
 	)
 }
 
-<script
-	async
-	src="https://cdn.bareksa.dev/bareksa/_next/static/chunks/203.754dffa36d7163420763.js"
-></script>
-<!-- Google tag (gtag.js) -->
-<script
-	async
-	src="https://www.googletagmanager.com/gtag/js?id=G-4C5WFGT8N2"
-></script>
+<!-- Google Tag Manager -->
 <script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag() {
-		dataLayer.push(arguments);
-	}
-	gtag("js", new Date());
-
-	gtag("config", "G-4C5WFGT8N2");
+	(function (w, d, s, l, i) {
+		w[l] = w[l] || [];
+		w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+		var f = d.getElementsByTagName(s)[0],
+			j = d.createElement(s),
+			dl = l != "dataLayer" ? "&l=" + l : "";
+		j.async = true;
+		j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+		f.parentNode.insertBefore(j, f);
+	})(window, document, "script", "dataLayer", "GTM-NVVQ69F3");
 </script>
+<!-- End Google Tag Manager -->
