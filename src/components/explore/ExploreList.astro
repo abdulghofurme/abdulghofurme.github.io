@@ -9,10 +9,10 @@ type Props = {
 const { explores } = Astro.props;
 ---
 
-<div aria-label="Blog explore list" class="grid grid-cols-1 grid-cols-2 gap-4">
+<div aria-label="Blog explore list" class="grid grid-cols-1 gap-4 sm:grid-cols-2">
 	{
 		explores.map((e) => (
-			<li class="flex flex-col gap-x-2 sm:flex-row">
+			<li class="flex w-full flex-col gap-x-2 sm:flex-row">
 				<ExplorePreview explore={e} />
 			</li>
 		))
