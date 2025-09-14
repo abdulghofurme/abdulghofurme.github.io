@@ -8,3 +8,21 @@ techs: ["typescript", "React", "Next.js", "Tailwind", "Shadcn", "TanStack Query"
 url: "https://next-pos-kappa-gray.vercel.app/"
 relatedArticles: []
 ---
+
+## Credentials
+
+Use the following accounts to try the app:
+
+- **Admin**
+
+  - Email: admin@getnada.com
+  - Password: 123456
+
+- **Cashier**
+
+  - Email: cashier@getnada.com
+  - Password: 123456
+
+- **Kitchen**
+  - Email: kitchen@getnada.com
+  - Password: 123456
