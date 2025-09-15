@@ -4,7 +4,18 @@ description: "Manage orders, payments, and sales reports in real-time with a fas
 publishDate: "13 Sep 2025"
 ogImage: "/img/next-pos.png"
 coverImage: { src: "/img/next-pos.png", alt: "Next POS" }
-techs: ["typescript", "React", "Next.js", "Tailwind", "Shadcn", "TanStack Query", "Supabase"]
+techs:
+  [
+    "typescript",
+    "React",
+    "Next.js",
+    "Tailwind",
+    "Shadcn",
+    "TanStack Query",
+    "Supabase",
+    "Zod",
+    "Zustand",
+  ]
 url: "https://next-pos-kappa-gray.vercel.app/"
 relatedArticles: []
 ---
